@@ -12,9 +12,12 @@ struct lista* eliminar(struct lista* lista){
 
 struct lista* agregar(struct lista* lista, int dato){
  struct lista* nuevo=(struct lista*)malloc(sizeof(struct lista));
- nuevo->dato=dato;
- nuevo->sig=lista;
- lista=nuevo;
+ if(nuevo!=NULL){
+  nuevo->dato=dato;
+  nuevo->sig=lista;
+  lista=nuevo;
+  return lista;
+  }
 }
 
 void mostrar(struct lista* lista){
